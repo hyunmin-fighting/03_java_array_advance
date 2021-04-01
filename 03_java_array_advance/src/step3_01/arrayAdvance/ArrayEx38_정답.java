@@ -3,7 +3,7 @@ package step3_01.arrayAdvance;
 import java.util.Arrays;
 import java.util.Scanner;
 
-// 210331 17:30 ~ 
+// 210331 17:30 ~ 20:41
 /*
  *	# 관리비
 */
@@ -98,10 +98,48 @@ public class ArrayEx38_정답 {
 		door1 = apt[maxIndex1][maxIndex2];
 		door2 = apt[minIndex1][minIndex2];
 
-		System.out.println(door1 + );
+		System.out.println("가장 많이 나온 집(" + door1 + "호), 가장 적게 나온 집(" + door2 + "호)");
 		
 		// 문제 4) 호 2개를 입력하면 관리비 교체
 
+		int aIndex1 = 0;
+		int aIndex2 = 0;
+		int bIndex1 = 0;
+		int bIndex2 = 01;
+		
+		System.out.println();
+		System.out.println("첫번째 집 호수 입력 : ");
+		door1 = scan.nextInt();
+		System.out.println("두번째 집 호수 입력 : ");
+		door2 = scan.nextInt();
+		
+		for(int i=0; i<apt.length; i++) {
+			for(int j=0; j<apt[i].length; j++) {
+				if(door1 == apt[i][j]) {
+					aIndex1 = i;
+					aIndex2 = j;
+				}
+				else if(door2 == apt[i][j]) {
+					bIndex1 = i;
+					bIndex2 = j;
+				}
+			}
+		}
+		
+		int val1 = pay[aIndex1][aIndex2];
+		int val2 = pay[bIndex1][bIndex2];		
+		
+		 pay[aIndex1][aIndex2] = val2;
+		 pay[bIndex1][bIndex2] = val1;
+		 
+		 for(int i=0; i<pay.length; i++) {
+			 for(int j=0; j<pay[i].length; j++) {
+				 System.out.println(pay[i][j]);
+			 }
+			 System.out.println();
+		 }
+		 
+		
 		scan.close();
 		
 	}
