@@ -29,7 +29,14 @@ public class ArrayEx49_문제 {
 			};
 			
 			int player = 0;
-
+			for(int i=0; i<map.length; i++) {
+				for(int j=0; j<map[i].length; j++) {
+					if(map[i][j] != 20) {
+						System.out.print("□" + " ");
+					}
+				}
+				System.out.println();
+			}
 	}
 
 }
